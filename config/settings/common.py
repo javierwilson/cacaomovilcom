@@ -43,6 +43,9 @@ THIRD_PARTY_APPS = (
 
     'ckeditor',
     'extended_flatpages',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
 )
 
 # Apps specific for this project go here.
