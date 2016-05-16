@@ -34,7 +34,7 @@
         <nav>
             <ul>
             <li class="active"><a href="#">INICIO</a></li>
-                <li><a href="#">ACERCA DE</a></li>
+                <li><a href="/acerca/">ACERCA DE</a></li>
                 <li><a href="#">PREGUNTAS</a></li>
                 <li><a href="#">GUIAS</a></li>
                 <li><a href="#">TALLERES</a></li>
@@ -45,6 +45,7 @@
           </div>          
           </div>
       </header>
+      {% block title %}
       <div class="heroimage">
       <div class="container">
           <div class="row">
@@ -58,11 +59,13 @@
           </div>
       </div>
           </div>
+      {% endblock %}
       <div class="colores">
       <div class="color verde"></div><div class="color amarillo"></div><div class="color rojo"></div><div class="color turquesa"></div><div class="color cafe"></div>
       </div>
       <div class="container">
           <div class="row bienvenidos">
+              {% block welcome %}
               <div class="col-md-4 telefono">
                   <img src="{% static 'images/telefono.png' %}">
               </div>
@@ -70,9 +73,11 @@
               <h2>BIENVENIDOS A CACAO MÓVIL</h2>
               <p>Duis blandit lacus nec elit malesuada, eget dignissim elit lobortis. Proin tristique vulputate laoreet. Vestibulum tincidunt tellus vitae massa euismod dapibus quis nec elit.</p>
               </div>
+              {% endblock %}
               <div class="col-md-1"></div>
           </div>
       </div>
+{% block productos %}
       <div class="productosgris">
       <div class="container">          
           <div class="row productos">
@@ -100,7 +105,9 @@
             </div>
           </div>
       </div>
-          </div>
+      </div>
+{% endblock %}
+{% block foros %}
           <div class="foros">
     <div class="container">
         <div class="row">
@@ -112,23 +119,25 @@
             <div class="col-md-6 forocol">
                 <h2>FOROS</h2>
                 <div class="foro">
-                <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
-                 <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
-                    </div>
+                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
+                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
+                </div>
                 <div class="foro">
-                <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
-                 <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
-                    </div>
+                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
+                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
+                </div>
                 <div class="foro">
-                <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
-                 <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
-                    </div>
+                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
+                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
+                </div>
                 <a href="#">Ver Todos</a>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
       <div class="container">
+{% block beneficios %}
           <div class="row beneftitulo">
               <h2>BENEFICIOS</h2>
           </div>
@@ -150,6 +159,7 @@
               <h3>COMUNIDAD</h3>
               <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
           </div>
+{% endblock %}
           <div class="row cooperacion">
               <img src="{% static 'images/logoscoop.png' %}">
           </div>          

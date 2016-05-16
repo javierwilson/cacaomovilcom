@@ -1,1 +1,108 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+      <div class="heroimage">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-8">
+              <h1 class="headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+              <p>Mauris volutpat sapien sed nibh commodo feugiat. Nullam vel posuere odio, eget aliquam diam. Curabitur eget quam dictum felis sodales sollicitudin.</p>
+              <a href="#"><img class="gplay" src="{% static 'images/gplay_button.png' %}"></a>
+              </div>
+          </div>
+      </div>
+          </div>
+{% endblock %}
+{% block welcome %}
+              <div class="col-md-4 telefono">
+                  <img src="{% static 'images/telefono.png' %}">
+              </div>
+              <div class="col-md-7">
+              <h2>BIENVENIDOS A CACAO MÓVIL</h2>
+              <p>Duis blandit lacus nec elit malesuada, eget dignissim elit lobortis. Proin tristique vulputate laoreet. Vestibulum tincidunt tellus vitae massa euismod dapibus quis nec elit.</p>
+              </div>
+{% endblock %}
+{% block productos %}
+      <div class="productosgris">
+      <div class="container">          
+          <div class="row productos">
+              <h2>PRODUCTOS</h2>
+              <p>Duis blandit lacus nec elit malesuada, eget dignissim elit lobortis. Proin tristique vulputate laoreet. Vestibulum tincidunt tellus vitae massa euismod dapibus quis nec elit.</p>
+          </div>
+          <div class="row servicios">
+          <div class="col-md-4 faqs">
+              <img class="img-responsive" src="{% static 'images/faqs.png' %}">
+              <h3>PREGUNTAS FRECUENTES</h3>
+              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam vel sapien enim. Suspendisse potenti.</p>
+              <a href="#">Leer Más</a>
+            </div>
+              <div class="col-md-4 taller">
+                  <img class="img-responsive" src="{% static 'images/talleres.png' %}">
+              <h3>TALLERES / WEBINARS</h3>
+              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam vel sapien enim. Suspendisse potenti.</p>
+              <a href="#">Leer Más</a>
+            </div>
+              <div class="col-md-4 sms">
+                  <img class="img-responsive" src="{% static 'images/sms.png' %}">
+              <h3>INFORMACIÓN POR SMS</h3>
+              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam vel sapien enim. Suspendisse potenti.</p>
+              <a href="#">Leer Más</a>
+            </div>
+          </div>
+      </div>
+      </div>
+{% endblock %}
+{% block foros %}
+<div class="foros">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="gray-box">
+                   
+                </div>
+            </div>
+            <div class="col-md-6 forocol">
+                <h2>FOROS</h2>
+                <div class="foro">
+                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
+                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
+                </div>
+                <div class="foro">
+                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
+                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
+                </div>
+                <div class="foro">
+                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
+                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
+                </div>
+                <a href="#">Ver Todos</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block beneficios %}
+          <div class="row beneftitulo">
+              <h2>BENEFICIOS</h2>
+          </div>
+          <div class="row beneficios">
+              <div class="col col-md-3">
+                  <img src="{% static 'images/educacion.png' %}">
+              <h3>EDUCACIÓN</h3>
+              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
+              <div class="col col-md-3">
+                  <img src="{% static 'images/sostenibilidad.png' %}">
+              <h3>SOSTENIBILIDAD</h3>
+              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
+              <div class="col col-md-3">
+                  <img src="{% static 'images/accesibilidad.png' %}">
+              <h3>ACCESIBILIDAD</h3>
+              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
+              <div class="col col-md-3">
+                  <img src="{% static 'images/comunidad.png' %}">
+              <h3>COMUNIDAD</h3>
+              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
+          </div>
+{% endblock %}
