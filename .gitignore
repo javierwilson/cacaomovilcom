@@ -61,3 +61,12 @@ cacaomovilcom/media/
 
 # MailHog binary
 mailhog
+
+# Shell stuff
+.bash*
+.oh-my-zsh
+.ssh
+.vim*
+.virtualenvs
+.wget*
+.z*
