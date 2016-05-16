@@ -33,13 +33,13 @@
         <div class="col-md-10">
         <nav>
             <ul>
-            <li class="active"><a href="#">INICIO</a></li>
+            <li class="active"><a href="/">INICIO</a></li>
                 <li><a href="/acerca/">ACERCA DE</a></li>
-                <li><a href="#">PREGUNTAS</a></li>
-                <li><a href="#">GUIAS</a></li>
-                <li><a href="#">TALLERES</a></li>
-                <li><a href="#">SMS</a></li>
-                <li><a class="contacto" href="#">CONTACTO</a></li>
+                <li><a href="/preguntas/">PREGUNTAS</a></li>
+                <li><a href="/guias/">GUIAS</a></li>
+                <li><a href="/talleres/">TALLERES</a></li>
+                <li><a href="/sms/">SMS</a></li>
+                <li><a class="contacto" href="/contacto/">CONTACTO</a></li>
             </ul>
             </nav></div>
           </div>          
@@ -61,12 +61,14 @@
       </div>
       <div class="container">
           <div class="row content">
+{% block welcome %}
               <div class="col-md-7">
                   <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id euismod nunc. Sed hendrerit dapibus nibh, ullamcorper venenatis tellus sagittis vitae. Etiam mollis ex nibh, a scelerisque metus pretium sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc posuere tristique malesuada. Nulla mollis condimentum massa vitae sodales. Nam efficitur est id augue ornare, in mattis quam sagittis.
                   <p>Donec risus leo, tempus nec arcu sed, gravida venenatis dui. Duis at tincidunt odio. Aliquam viverra faucibus eros eu pharetra. Vivamus tristique purus at semper sodales. Donec congue nulla eget sodales auctor. Sed malesuada ullamcorper metus quis pulvinar. Quisque quis elit magna. In bibendum tempus scelerisque. Proin a neque vitae turpis condimentum gravida ut tincidunt tellus. Donec sit amet vestibulum odio. Ut accumsan ac ante sed mattis. Sed et aliquet nisl. Aliquam erat volutpat. Proin et tortor vulputate, ullamcorper quam vel, interdum nunc. Sed in imperdiet magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
                   <p>Nunc velit tellus, cursus sit amet dictum nec, eleifend a quam. Morbi sed tellus ac ligula dapibus sodales sit amet et dolor. Quisque pellentesque dui non tristique ornare. Nulla lacus ex, porta sit amet eleifend rhoncus, rhoncus ac augue. Suspendisse bibendum neque vel varius tincidunt. Duis id ultrices ipsum, non hendrerit felis. In id elit aliquet, maximus mi vitae, molestie justo. Nam eu ipsum tellus.</p>
               </div>
               <div class="col-md-1"></div>
+{% endblock %}
 {% block productos %}
           <div class="col-md-4 productosinner">
               <h2>PRODUCTOS</h2>

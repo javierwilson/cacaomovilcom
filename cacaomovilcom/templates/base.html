@@ -33,13 +33,13 @@
         <div class="col-md-10">
         <nav>
             <ul>
-            <li class="active"><a href="#">INICIO</a></li>
+            <li class="active"><a href="/">INICIO</a></li>
                 <li><a href="/acerca/">ACERCA DE</a></li>
-                <li><a href="#">PREGUNTAS</a></li>
-                <li><a href="#">GUIAS</a></li>
-                <li><a href="#">TALLERES</a></li>
-                <li><a href="#">SMS</a></li>
-                <li><a class="contacto" href="#">CONTACTO</a></li>
+                <li><a href="/preguntas/">PREGUNTAS</a></li>
+                <li><a href="/guias/">GUIAS</a></li>
+                <li><a href="/talleres/">TALLERES</a></li>
+                <li><a href="/sms/">SMS</a></li>
+                <li><a class="contacto" href="/contacto/">CONTACTO</a></li>
             </ul>
             </nav></div>
           </div>          
@@ -64,8 +64,8 @@
       <div class="color verde"></div><div class="color amarillo"></div><div class="color rojo"></div><div class="color turquesa"></div><div class="color cafe"></div>
       </div>
       <div class="container">
-          <div class="row bienvenidos">
               {% block welcome %}
+          <div class="row bienvenidos">
               <div class="col-md-4 telefono">
                   <img src="{% static 'images/telefono.png' %}">
               </div>
@@ -73,9 +73,9 @@
               <h2>BIENVENIDOS A CACAO MÓVIL</h2>
               <p>Duis blandit lacus nec elit malesuada, eget dignissim elit lobortis. Proin tristique vulputate laoreet. Vestibulum tincidunt tellus vitae massa euismod dapibus quis nec elit.</p>
               </div>
-              {% endblock %}
               <div class="col-md-1"></div>
           </div>
+              {% endblock %}
       </div>
 {% block productos %}
       <div class="productosgris">
