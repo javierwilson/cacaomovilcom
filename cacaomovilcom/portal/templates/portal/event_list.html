@@ -1,0 +1,33 @@
+{% extends "basei.html" %}
+{% load thumbnail %}
+{% block title %}
+      <div class="headerimg">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1 class="headline">EVENTOS</h1>
+              </div>
+          </div>
+      </div>
+          </div>
+{% endblock %}
+{% block welcome %}
+              <div class="col-md-7">
+                  <!-- <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2> -->
+                  <p>Estos son los eventos que hemos realizado</p>
+
+{% for object in object_list %}
+              <div>
+                <h3>{{ object.title }}</h3>
+                <i>{{ object.inicio|date }}</i>
+                <a href="{{ object.url }}">
+                <img class="img-responsive" src="{{ object.image|thumbnail_url:'small' }}" alt="">
+                </a>
+              </div>
+{% empty %}
+    <li>No objects yet.</li>
+{% endfor %}
+
+              </div>
+              <div class="col-md-1"></div>
+{% endblock %}

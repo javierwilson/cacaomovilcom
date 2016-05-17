@@ -169,6 +169,7 @@ TEMPLATES = [
                 # Your stuff: custom template context processors go here
             ],
         },
+        #'APP_DIRS': True,
     },
 ]
 
@@ -240,3 +241,13 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+# THUMBNAILS
+THUMBNAIL_ALIASES = {
+    '': {
+        'avatar': {'size': (100,100), 'crop': True},
+        'forum':  {'size': (203,103), 'crop': False},
+        'small':  {'size': (203,103), 'crop': False},
+        'medium': {'size': (250,250), 'crop': False},
+    },
+}
