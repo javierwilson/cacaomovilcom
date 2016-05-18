@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
     url(r'^eventos/$', ListView.as_view(model=Event), name='events'),
+    url(r'^guias/$', ListView.as_view(model=Guide), name='guides'),
 ]

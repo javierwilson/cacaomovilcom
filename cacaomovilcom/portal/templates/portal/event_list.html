@@ -1,20 +1,23 @@
 {% extends "basei.html" %}
 {% load thumbnail %}
+{% load flatpages %}
 {% block title %}
+{% get_flatpages '/eventos/' as events_page %}
       <div class="headerimg">
       <div class="container">
           <div class="row">
               <div class="col-md-12">
-                  <h1 class="headline">EVENTOS</h1>
+                  <h1 class="headline">{{ events_page.0.title }}</h1>
               </div>
           </div>
       </div>
           </div>
 {% endblock %}
 {% block welcome %}
+{% get_flatpages '/eventos/' as events_page %}
               <div class="col-md-7">
                   <!-- <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2> -->
-                  <p>Estos son los eventos que hemos realizado</p>
+                  <p>{{ events_page.0.content|safe }}</p>
 
 {% for object in object_list %}
               <div>
