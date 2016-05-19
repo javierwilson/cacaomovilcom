@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static from staticfiles %}
+{% load extended_flatpages %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -171,13 +172,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2>CONTÁCTENOS</h2>
+{% get_flatpages '/contacto/' as contact %}
+                <h2>{{ contact.0.title }}</h2>
                 <div class="direccion">
-                <p class="lwr">Lutheran World Relief</p>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p>T: +505 2345 6789</p>
-                    <p>C: info@cacaomovil.com</p>
-                    </div>
+                    {{ contact.0.content | safe }}
+                </div>
                 <p class="copyright">© Cacao Móvil 2016</p>
                 </div>
             <div class="col-md-6">
