@@ -91,21 +91,14 @@
               <h2>BENEFICIOS</h2>
           </div>
           <div class="row beneficios">
+{% for object in fields %}
               <div class="col col-md-3">
-                  <img src="{% static 'images/educacion.png' %}">
-              <h3>EDUCACIÓN</h3>
-              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
-              <div class="col col-md-3">
-                  <img src="{% static 'images/sostenibilidad.png' %}">
-              <h3>SOSTENIBILIDAD</h3>
-              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
-              <div class="col col-md-3">
-                  <img src="{% static 'images/accesibilidad.png' %}">
-              <h3>ACCESIBILIDAD</h3>
-              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
-              <div class="col col-md-3">
-                  <img src="{% static 'images/comunidad.png' %}">
-              <h3>COMUNIDAD</h3>
-              <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p></div>
+              <img src="{% static 'images/educacion.png' %}">
+              <h3>{{ object.title | upper}}</h3>
+              <p>{{ object.description }}
+              </p></div>
+{% empty %}
+    <li>No objects yet.</li>
+{% endfor %}
           </div>
 {% endblock %}

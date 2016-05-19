@@ -6,8 +6,8 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.views.generic import ListView
 
-from .models import *
-from .views import *
+from .models import Event, Guide
+from .views import HomePageView
 
 urlpatterns = [
     url(r'^$', HomePageView.as_view(template_name='pages/home.html'), name='home'),
