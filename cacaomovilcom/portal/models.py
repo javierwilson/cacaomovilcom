@@ -26,7 +26,7 @@ class Guide(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('guia_detail', args=(self.number,))
+        return '/guia/%s' % (self.number,)
 
 @python_2_unicode_compatible
 class Category(models.Model):

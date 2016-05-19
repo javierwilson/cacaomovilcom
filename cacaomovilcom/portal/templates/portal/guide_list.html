@@ -1,33 +1,76 @@
-{% extends "basei.html" %}
+{% extends "base.html" %}
 {% load thumbnail %}
 {% load flatpages %}
-{% block title %}
+{% block headline %}
+{% get_flatpages '/guias/' as page %}
       <div class="headerimg">
       <div class="container">
           <div class="row">
               <div class="col-md-12">
-                  <h1 class="headline">EVENTOS</h1>
+                  <h1 class="headline">{{ page.0.title }}</h1>
               </div>
           </div>
       </div>
           </div>
 {% endblock %}
-{% block welcome %}
+{% block content %}
+{% get_flatpages '/guias/' as page %}
               <div class="col-md-7">
                   <!-- <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2> -->
-                  <p>Estos son los eventos que hemos realizado</p>
+                  <p>{{ page.0.content|safe }}</p>
 
-{% for object in object_list %}
-              <div>
-                <h3>{{ object.title }}</h3>
-                <i>{{ object.inicio|date }}</i>
-                <a href="{{ object.url }}">
-                <img class="img-responsive" src="{{ object.image|thumbnail_url:'small' }}" alt="">
-                </a>
-              </div>
-{% empty %}
-    <li>No objects yet.</li>
-{% endfor %}
+                  <div class="col-lg-10 col-lg-offset-1">
+                      <div class="well-help">
+                      	<strong>CLICK EN CADA GUÍA PARA LEER GUIA</strong>
+                      </div>
+                  </div>
+
+                        <div class="row">
+                            {% for object in object_list %}
+                            <div class="col-lg-4 col-sm-4 col-xs-6 col-480">
+                                <!-- thumbnail -->
+                                <div class="thumbnail animation animating delay fadeInRight">
+                                    <!-- media -->
+                                    <div class="media">
+                                        <!-- toolbar overlay -->
+                                        <div class="overlay visible-md visible-lg">
+                                            <div class="toolbar">
+                                                <a href="{{ object.get_absolute_url }}" target="_blank" class="btn back-guia{{ object.number }}" title="Ver Guía"><i class="flaticon-eye46 fsize18"></i></a>
+                                                <a href="/media/guia-de-cacao-completa.zip" class="btn back-guia{{ object.number }}" title="Descargar Guía"><i class="flaticon-download170 fsize18" ></i></a>
+                                                <a href="javascript:$('.js-print-form__{{ object.number }}').submit();" class="btn back-guia{{ object.number }}" title="Imprimir Guía">
+                                                  <form class="js-print-form__{{ object.number }}" method="GET" action="">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="guide-id" value="{{ object.number }}">
+                                                    <i class="flaticon-printer78 fsize18" ></i>
+                                                  </form>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!--/ toolbar overlay -->
+                                        {% thumbnail object.image "247x311" crop="center" as img %}
+                                         <a href="{{ object.get_absolute_url }}" target="_blank"><img src="{{ img.url }}" alt="Cover" width="100%" /></a>
+                                        <!-- book effect -->
+                                        <div class="effect"></div>
+                                        <!--/ book effect -->
+                                        <div class="header back-guia{{ object.number }} text-uppercase text-white">
+                                            <h4 class="title" ><a href="{{ object.get_absolute_url }}" target="_blank">{{ object.name }}</a></h4>
+                                            <div class="guia" >
+                                                <span>Guía</span>
+                                                <span class="number">{{ object.number }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/ media -->
+                                </div>
+                                <!--/ thumbnail -->
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END Row -->
+
 
               </div>
               <div class="col-md-1"></div>

@@ -240,7 +240,27 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
+# CKEditor
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = "ckuploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            ['Format', 'Bold', 'Italic', 'Underline', 'SpellChecker',
+             '-', 'NumberedList', 'BulletedList', 'Indent', 'Outdent', 'JustifyLeft', 'JustifyCenter',
+             '-', 'JustifyRight', 'JustifyBlock', 'PasteText', 'PasteFromWord',
+             '-', 'Find', 'Replace', 'Cut', 'Copy', 'Paste',
+             '-', 'Image', 'Table', 'Link', 'Unlink', 'SectionLink', 'Undo', 'Redo', 'Source',
+             'Maximize',
+             ],
+        ],
+        'width': 'auto',
+        'allowedContent': True,
+        'removePlugins': 'stylesheetparser',
+        'extraAllowedContent': 'iframe[*]',
+    },
+}
 
 # THUMBNAILS
 THUMBNAIL_ALIASES = {

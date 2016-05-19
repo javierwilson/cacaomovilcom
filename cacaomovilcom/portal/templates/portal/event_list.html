@@ -1,23 +1,23 @@
-{% extends "basei.html" %}
+{% extends "base.html" %}
 {% load thumbnail %}
 {% load flatpages %}
-{% block title %}
-{% get_flatpages '/eventos/' as events_page %}
+{% block headline %}
+{% get_flatpages '/eventos/' as page %}
       <div class="headerimg">
       <div class="container">
           <div class="row">
               <div class="col-md-12">
-                  <h1 class="headline">{{ events_page.0.title }}</h1>
+                  <h1 class="headline">{{ page.0.title }}</h1>
               </div>
           </div>
       </div>
           </div>
 {% endblock %}
-{% block welcome %}
-{% get_flatpages '/eventos/' as events_page %}
+{% block content %}
+{% get_flatpages '/eventos/' as page %}
               <div class="col-md-7">
                   <!-- <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2> -->
-                  <p>{{ events_page.0.content|safe }}</p>
+                  <p>{{ page.0.content|safe }}</p>
 
 {% for object in object_list %}
               <div>
@@ -26,6 +26,7 @@
                 <a href="{{ object.url }}">
                 <img class="img-responsive" src="{{ object.image|thumbnail_url:'small' }}" alt="">
                 </a>
+                {{ object.description }}
               </div>
 {% empty %}
     <li>No objects yet.</li>
