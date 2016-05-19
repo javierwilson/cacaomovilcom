@@ -72,19 +72,15 @@
             </div>
             <div class="col-md-6 forocol">
                 <h2>FOROS</h2>
+{% for object in events %}
                 <div class="foro">
-                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
-                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
+                    <p class="fecha">{{ object.inicio|date }} | {{ object.place }}</p>
+                    <p class="nombre">{{ object.title }} </p>
                 </div>
-                <div class="foro">
-                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
-                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
-                </div>
-                <div class="foro">
-                    <p class="fecha">26 de Septiembre 2016 | Managua, Managua</p>
-                    <p class="nombre">Suspendisse potenti. Donec tincidunt lorem massa, et rhoncus urna facilisis eu. </p>
-                </div>
-                <a href="#">Ver Todos</a>
+{% empty %}
+    <li>No objects yet.</li>
+{% endfor %}
+                <a href="/eventos/">Ver Todos</a>
             </div>
         </div>
     </div>
