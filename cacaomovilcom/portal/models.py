@@ -119,6 +119,7 @@ class Product(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField()
     description = models.TextField()
+    url = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.title
