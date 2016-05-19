@@ -71,3 +71,7 @@ mailhog
 .wget*
 .z*
 .cache
+
+# collected static files and uploaded media 
+/media
+/staticfiles
