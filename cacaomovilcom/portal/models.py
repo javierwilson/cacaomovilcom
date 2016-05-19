@@ -112,3 +112,13 @@ class Field(models.Model):
 
     def __str__(self):
         return self.title
+
+@python_2_unicode_compatible
+class Product(models.Model):
+    """Productos: Titulo, imagen, descripcion"""
+    title = models.CharField(max_length=200)
+    image = models.ImageField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
