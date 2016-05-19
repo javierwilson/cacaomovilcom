@@ -15,23 +15,22 @@
 {% endblock %}
 {% block content %}
 {% get_flatpages '/eventos/' as page %}
-              <div class="col-md-7">
+              <div class="col-md-8">
                   <!-- <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2> -->
                   <p>{{ page.0.content|safe }}</p>
-
-{% for object in object_list %}
-              <div>
-                <h3>{{ object.title }}</h3>
-                <i>{{ object.inicio|date }}</i>
-                <a href="{{ object.url }}">
-                <img class="img-responsive" src="{{ object.image|thumbnail_url:'small' }}" alt="">
-                </a>
-                {{ object.description }}
+                  {% for object in object_list %}
+                  <div class="listitem clearfix">
+                    <h2>{{ object.title }}</h2>
+                    {% thumbnail object.image "200x133" crop="center" as img %}
+                    <a href="{{ object.url }}">
+                    <img src="{{ img.url }}" alt="" class="img-responsive pull-left" >
+                    </a>
+                    <i>{{ object.inicio|date }}</i>
+                    <p>{{ object.description|truncatewords:35 }}</p>
+                    <a href="#">VER MAS</a>
+                  </div>
+                  {% empty %}
+                    <li>No objects yet.</li>
+                  {% endfor %}
               </div>
-{% empty %}
-    <li>No objects yet.</li>
-{% endfor %}
-
-              </div>
-              <div class="col-md-1"></div>
 {% endblock %}
