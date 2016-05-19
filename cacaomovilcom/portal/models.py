@@ -120,6 +120,7 @@ class Product(models.Model):
     image = models.ImageField()
     description = models.TextField()
     url = models.CharField(max_length=200, null=True, blank=True)
+    nickname = models.CharField(max_length=20, null=True, blank=True)
 
     def __str__(self):
         return self.title

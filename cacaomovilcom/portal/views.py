@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from .models import Event, Field
+from .models import Event, Field, Product
 
 class HomePageView(TemplateView):
 
@@ -11,4 +11,5 @@ class HomePageView(TemplateView):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context['events'] = Event.objects.all()[:5]
         context['fields'] = Field.objects.all()[:5]
+        context['products'] = Product.objects.all()[:5]
         return context

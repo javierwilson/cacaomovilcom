@@ -39,6 +39,17 @@
               <p>Duis blandit lacus nec elit malesuada, eget dignissim elit lobortis. Proin tristique vulputate laoreet. Vestibulum tincidunt tellus vitae massa euismod dapibus quis nec elit.</p>
           </div>
           <div class="row servicios">
+{% for object in products %}
+          <div class="col-md-4 {{ object.nickname }}">
+              {% thumbnail object.image "362x204" crop="center" as img %}
+              <img class="img-responsive" src="{{ img.url }}">
+              <h3>{{ object.title }}</h3>
+              <p>{{ object.description }}
+              </p>
+              <a href="{{ object.url }}">Leer Más</a>
+            </div>
+{% endfor %}
+<!--
           <div class="col-md-4 faqs">
               <img class="img-responsive" src="{% static 'images/faqs.png' %}">
               <h3>PREGUNTAS FRECUENTES</h3>
@@ -57,6 +68,7 @@
               <p>Nullam neque justo, pulvinar quis massa in, aliquam venenatis quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam vel sapien enim. Suspendisse potenti.</p>
               <a href="#">Leer Más</a>
             </div>
+            -->
           </div>
       </div>
       </div>
