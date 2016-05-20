@@ -22,12 +22,12 @@
                   <div class="listitem clearfix">
                     <h2>{{ object.title }}</h2>
                     {% thumbnail object.image "200x133" crop="center" as img %}
-                    <a href="{{ object.url }}">
+                    <a href="{{ object.url }}" target="_blank">
                     <img src="{{ img.url }}" alt="" class="img-responsive pull-left" >
                     </a>
                     <i>{{ object.inicio|date }}</i>
                     <p>{{ object.description|truncatewords:35 }}</p>
-                    <a href="#">VER MAS</a>
+                    <a href="{{ object.url }}" target="_blank">Leer más</a>
                   </div>
                   {% empty %}
                     <li>No objects yet.</li>
