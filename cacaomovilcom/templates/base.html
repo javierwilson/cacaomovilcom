@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load portal_tags %}
 {% load extended_flatpages %}
 {% load static from staticfiles %}
 <html lang="en">
@@ -34,13 +35,13 @@
         <div class="col-md-10">
         <nav>
             <ul>
-            <li class="active"><a href="/">INICIO</a></li>
-                <li><a href="/acerca/">ACERCA DE</a></li>
-                <li><a href="/preguntas/">PREGUNTAS</a></li>
-                <li><a href="/guias/">GUIAS</a></li>
-                <li><a href="/eventos/">EVENTOS</a></li>
-                <li><a href="/sms/">SMS</a></li>
-                <li><a class="contacto" href="/contacto/">CONTACTO</a></li>
+                <li class="{% active '^/$' %}"><a href="/">INICIO</a></li>
+                <li class="{% active '^/acerca/$' %}"><a href="/acerca/">ACERCA DE</a></li>
+                <li class="{% active '^/preguntas/$' %}"><a href="/preguntas/">PREGUNTAS</a></li>
+                <li class="{% active '^/guias/$' %}"><a href="/guias/">GUIAS</a></li>
+                <li class="{% active '^/eventos/$' %}"><a href="/eventos/">EVENTOS</a></li>
+                <li class="{% active '^/sms/$' %}"><a href="/sms/">SMS</a></li>
+                <li class="{% active '^/contacto/$' %}"><a class="contacto" href="/contacto/">CONTACTO</a></li>
             </ul>
             </nav></div>
           </div>          
