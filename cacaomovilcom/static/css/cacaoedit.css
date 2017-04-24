@@ -90,7 +90,7 @@ text-align: right;
     content: '';
     width: 119px;
     height: 119px;
-    background-image: url(../images/faqicon.png);
+    /* background-image: url(../images/faqicon.png); */
     position: absolute;
     left: 0;
     top: 30px;
@@ -101,7 +101,7 @@ text-align: right;
     content: '';
     width: 127px;
     height: 120px;
-    background-image: url(../images/tallericon.png);
+    /*background-image: url(../images/tallericon.png);*/
     position: absolute;
     left: 0;
     top: 30px;
@@ -112,7 +112,7 @@ text-align: right;
     content: '';
     width: 78px;
     height: 119px;
-    background-image: url(../images/smsicon.png);
+    /*background-image: url(../images/smsicon.png);*/
     position: absolute;
     left: 0;
     top: 30px;
