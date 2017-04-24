@@ -75,3 +75,4 @@ mailhog
 # collected static files and uploaded media 
 /media
 /staticfiles
+/static
