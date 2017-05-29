@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 {% load staticfiles %}
 {% block headline %}
       <div class="headerimg">
@@ -20,19 +21,17 @@
 {% block productos %}
           <div class="col-md-4 productosinner">
               <h2>PRODUCTOS</h2>
-              <p>Duis blandit lacus nec elit malesuada, eget dignissim elit lobortis.</p>
-              <div class="faqs">
-                <img class="img-responsive" src="{% static 'images/faqs.png' %}">
-                <h3>PREGUNTAS FRECUENTES</h3>
-              </div>
-              <div class="taller">
-                <img class="img-responsive" src="{% static 'images/talleres.png' %}">
-                <h3>TALLERES / WEBINARS</h3>
-              </div>
-              <div class="sms">
-                <img class="img-responsive" src="{% static 'images/sms.png' %}">
-                <h3>INFORMACIÓN POR SMS</h3>
-              </div>
+              <p>Productos desarrollados e implementados por Cacao Móvil</p>
+{% for object in products %}
+          <div class="{{ object.nickname }}">
+              {% thumbnail object.image "362x204" crop="center" as img %}
+              <a href="{{ object.url }}"><img class="img-responsive" src="{{ img.url }}"></a>
+              <h3>{{ object.title }}</h3>
+              <p>{{ object.description }}
+              </p>
+              <a href="{{ object.url }}">Leer Más</a>
+            </div>
+{% endfor %}
               </div>
 {% endblock %}
 {% block foros %}

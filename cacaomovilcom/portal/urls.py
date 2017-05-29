@@ -11,7 +11,7 @@ from .views import HomePageView
 
 urlpatterns = [
     url(r'^$', HomePageView.as_view(template_name='pages/home.html'), name='home'),
-    url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    url(r'^about/$', ListView.as_view(template_name='pages/about.html'), name='about'),
     url(r'^eventos/$', ListView.as_view(model=Event), name='events'),
     url(r'^guias/$', ListView.as_view(model=Guide), name='guides'),
 ]

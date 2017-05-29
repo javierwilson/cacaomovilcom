@@ -31,17 +31,17 @@
       <div class="container">
     <div class="row headerrow">
           <div class="col-md-2">
-              <img src="{% static 'images/logo.png' %}">
+              <a href="/"><img src="{% static 'images/logo.png' %}"></a>
         </div>
         <div class="col-md-10">
         <nav>
             <ul>
                 <li class="{% active '^/$' %}"><a href="/">INICIO</a></li>
                 <li class="{% active '^/acerca/$' %}"><a href="/acerca/">ACERCA DE</a></li>
-                <li class="{% active '^/respuestas/$' %}"><a href="/respuestas/">RESPUESTAS</a></li>
-                <li class="{% active '^/guias/$' %}"><a href="/guias/">GUIAS</a></li>
+                <li class="{% active '^/respuestas/$' %}"><a href="/respuestas/">CACAO RESPUESTAS</a></li>
+                <li class="{% active '^/guias/$' %}"><a href="/guias/">CACAO MÓVIL</a></li>
+                <li class="{% active '^/sms/$' %}"><a href="/sms/">CACAO SMS</a></li>
                 <li class="{% active '^/eventos/$' %}"><a href="/eventos/">EVENTOS</a></li>
-                <li class="{% active '^/sms/$' %}"><a href="/sms/">SMS</a></li>
                 <li class="{% active '^/contacto/$' %}"><a class="contacto" href="/contacto/">CONTACTO</a></li>
             </ul>
             </nav></div>
@@ -78,7 +78,7 @@
   {% for object in products %}
               <div class="{{ object.nickname }}">
                 {% thumbnail object.image "362x204" crop="center" as img %}
-                <img class="img-responsive" src="{{ img.url }}">
+                <a href="{{ object.url }}"><img class="img-responsive" src="{{ img.url }}"></a>
                 <h3>{{ object.title }}</h3>
               </div>
   {% endfor %}
